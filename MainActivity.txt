@@ -1,0 +1,1209 @@
+.class public final Lir/easylive/bale/MainActivity;
+.super Landroidx/appcompat/app/AppCompatActivity;
+.source "SourceFile"
+
+
+# static fields
+.field public static final ᄊ:Lk40;
+
+
+# instance fields
+.field public ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+.field public ᄃ:Loq0;
+
+.field public ᄄ:Lse;
+
+.field public ᄅ:Loe;
+
+.field public ᄆ:Lo7;
+
+.field public ᄇ:Lq80;
+
+.field public ᄈ:Lcom/google/android/material/navigation/NavigationView;
+
+.field public ᄉ:Z
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-class v0, Lir/easylive/bale/MainActivity;
+
+    invoke-static {v0}, Lp40;->ᄂ(Ljava/lang/Class;)Lk40;
+
+    move-result-object v0
+
+    sput-object v0, Lir/easylive/bale/MainActivity;->ᄊ:Lk40;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Landroidx/appcompat/app/AppCompatActivity;-><init>()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lir/easylive/bale/MainActivity;->ᄉ:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onCreate(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Landroidx/fragment/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
+
+    :try_start_0
+    new-instance p1, Lq80;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Lq80;-><init>(Landroid/content/Context;)V
+
+    iput-object p1, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {p0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lir/easylive/bale/databinding/ActivityMainBinding;->inflate(Landroid/view/LayoutInflater;)Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    invoke-virtual {p1}, Lir/easylive/bale/databinding/ActivityMainBinding;->getRoot()Landroidx/drawerlayout/widget/DrawerLayout;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Landroidx/appcompat/app/AppCompatActivity;->setContentView(Landroid/view/View;)V
+
+    invoke-virtual {p0}, Lir/easylive/bale/MainActivity;->ᄆ()V
+
+    iget-object p1, p0, Lir/easylive/bale/MainActivity;->ᄆ:Lo7;
+
+    if-eqz p1, :cond_0
+
+    invoke-virtual {p0}, Lir/easylive/bale/MainActivity;->ᄈ()V
+
+    invoke-virtual {p0}, Lir/easylive/bale/MainActivity;->ᄉ()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    sget-object v0, Lir/easylive/bale/MainActivity;->ᄊ:Lk40;
+
+    const-string v1, "Error initializing MainActivity"
+
+    invoke-interface {v0, v1, p1}, Lk40;->ᄇ(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    const-string p1, "\u062e\u0637\u0627 \u062f\u0631 \u0627\u062c\u0631\u0627\u06cc \u0628\u0631\u0646\u0627\u0645\u0647. \u0644\u0637\u0641\u0627 \u0645\u062c\u062f\u062f\u0627 \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f."
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, p1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+
+    :cond_0
+    :goto_0
+    return-void
+.end method
+
+.method public final onDestroy()V
+    .locals 3
+
+    invoke-super {p0}, Landroidx/appcompat/app/AppCompatActivity;->onDestroy()V
+
+    :try_start_0
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lir/easylive/bale/MainActivity;->ᄅ:Loe;
+
+    if-eqz v1, :cond_0
+
+    iget-object v0, v0, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->ᄅ(Lfu0;)V
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_1
+
+    :cond_0
+    :goto_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄅ:Loe;
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄃ:Loq0;
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄄ:Lse;
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄈ:Lcom/google/android/material/navigation/NavigationView;
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄆ:Lo7;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_2
+
+    :goto_1
+    sget-object v1, Lir/easylive/bale/MainActivity;->ᄊ:Lk40;
+
+    const-string v2, "Error cleaning up resources"
+
+    invoke-interface {v1, v2, v0}, Lk40;->ᄇ(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    :goto_2
+    return-void
+.end method
+
+.method public final onResume()V
+    .locals 1
+
+    invoke-super {p0}, Landroidx/fragment/app/FragmentActivity;->onResume()V
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄃ:Loq0;
+
+    invoke-virtual {v0}, Loq0;->ᄄ()V
+
+    return-void
+.end method
+
+.method public final onSaveInstanceState(Landroid/os/Bundle;)V
+    .locals 2
+
+    invoke-super {p0, p1}, Landroidx/activity/ComponentActivity;->onSaveInstanceState(Landroid/os/Bundle;)V
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v0, v0, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0}, Landroidx/viewpager2/widget/ViewPager2;->getCurrentItem()I
+
+    move-result v0
+
+    const-string v1, "selected_position"
+
+    invoke-virtual {p1, v1, v0}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public final ᄆ()V
+    .locals 4
+
+    sget-object v0, Lir/easylive/bale/MainActivity;->ᄊ:Lk40;
+
+    :try_start_0
+    iget-object v1, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {v1}, Lq80;->ᄃ()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    invoke-static {v1}, Lo7;->ᄅ(Ljava/lang/String;)Lo7;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lir/easylive/bale/MainActivity;->ᄆ:Lo7;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, v1, Lo7;->ᄀ:Lb8;
+
+    invoke-virtual {v1}, Lb8;->ᄃ()V
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v1
+
+    goto :goto_0
+
+    :cond_0
+    const-string v1, "No active user token found - redirecting to login"
+
+    invoke-interface {v0, v1}, Lk40;->ᄉ(Ljava/lang/String;)V
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v2, Lir/easylive/bale/LoginActivity;
+
+    invoke-direct {v1, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const/high16 v2, 0x14000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    invoke-virtual {p0}, Landroid/app/Activity;->finish()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :goto_0
+    const-string v2, "Error initializing grpcHelper"
+
+    invoke-interface {v0, v2, v1}, Lk40;->ᄇ(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    new-instance v0, Lq50;
+
+    invoke-direct {v0, p0}, Lq50;-><init>(Landroid/content/Context;)V
+
+    const-string v1, "\u062e\u0637\u0627 \u062f\u0631 \u0627\u062a\u0635\u0627\u0644"
+
+    iget-object v2, v0, Lv1;->ᄂ:Ljava/lang/Object;
+
+    check-cast v2, Lr1;
+
+    iput-object v1, v2, Lr1;->ᄅ:Ljava/lang/CharSequence;
+
+    const-string v1, "\u0644\u0637\u0641\u0627\u064b \u0645\u062c\u062f\u062f\u0627\u064b \u062a\u0644\u0627\u0634 \u06a9\u0646\u06cc\u062f"
+
+    iput-object v1, v2, Lr1;->ᄇ:Ljava/lang/CharSequence;
+
+    new-instance v1, Le50;
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, p0, v3}, Le50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    const-string v3, "\u062a\u0644\u0627\u0634 \u0645\u062c\u062f\u062f"
+
+    invoke-virtual {v0, v3, v1}, Lq50;->ᄇ(Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+
+    new-instance v1, Le50;
+
+    const/4 v3, 0x2
+
+    invoke-direct {v1, p0, v3}, Le50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    const-string v3, "\u062e\u0631\u0648\u062c"
+
+    iput-object v3, v2, Lr1;->ᄊ:Ljava/lang/CharSequence;
+
+    iput-object v1, v2, Lr1;->ᄋ:Landroid/content/DialogInterface$OnClickListener;
+
+    const/4 v1, 0x0
+
+    iput-boolean v1, v2, Lr1;->ᄌ:Z
+
+    invoke-virtual {v0}, Lv1;->ᄆ()V
+
+    :cond_1
+    :goto_1
+    return-void
+.end method
+
+.method public final ᄇ(Ljava/lang/String;)V
+    .locals 3
+
+    const-string v0, "bazaar://details?id="
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.intent.action.VIEW"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    :try_start_0
+    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    const-string v0, "https://myket.ir/app/"
+
+    invoke-virtual {v0, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object p1
+
+    invoke-virtual {v1, p1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method public final ᄈ()V
+    .locals 15
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    new-instance v3, Loq0;
+
+    iget-object v4, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v4, v4, Lir/easylive/bale/databinding/ActivityMainBinding;->MaterialToolBarTop:Lcom/google/android/material/appbar/MaterialToolbar;
+
+    sget-object v5, Lnq0;->ᄂ:Lnq0;
+
+    invoke-direct {v3, p0, v4, v2, v5}, Loq0;-><init>(Landroid/content/Context;Lcom/google/android/material/appbar/MaterialToolbar;ZLnq0;)V
+
+    iput-object v3, p0, Lir/easylive/bale/MainActivity;->ᄃ:Loq0;
+
+    iget-object v3, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v4, v3, Lir/easylive/bale/databinding/ActivityMainBinding;->drawerLayout:Landroidx/drawerlayout/widget/DrawerLayout;
+
+    iget-object v5, v3, Lir/easylive/bale/databinding/ActivityMainBinding;->navigationView:Lcom/google/android/material/navigation/NavigationView;
+
+    iput-object v5, p0, Lir/easylive/bale/MainActivity;->ᄈ:Lcom/google/android/material/navigation/NavigationView;
+
+    new-instance v5, Lx;
+
+    iget-object v3, v3, Lir/easylive/bale/databinding/ActivityMainBinding;->MaterialToolBarTop:Lcom/google/android/material/appbar/MaterialToolbar;
+
+    invoke-direct {v5, p0, v4, v3}, Lx;-><init>(Lir/easylive/bale/MainActivity;Landroidx/drawerlayout/widget/DrawerLayout;Landroidx/appcompat/widget/Toolbar;)V
+
+    invoke-virtual {v4, v5}, Landroidx/drawerlayout/widget/DrawerLayout;->ᄀ(Lzq;)V
+
+    iget-object v3, v5, Lx;->ᄂ:Landroidx/drawerlayout/widget/DrawerLayout;
+
+    const v4, 0x800003
+
+    invoke-virtual {v3, v4}, Landroidx/drawerlayout/widget/DrawerLayout;->ᄅ(I)Landroid/view/View;
+
+    move-result-object v6
+
+    if-eqz v6, :cond_0
+
+    invoke-static {v6}, Landroidx/drawerlayout/widget/DrawerLayout;->ᄎ(Landroid/view/View;)Z
+
+    move-result v6
+
+    goto :goto_0
+
+    :cond_0
+    move v6, v2
+
+    :goto_0
+    if-eqz v6, :cond_1
+
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    invoke-virtual {v5, v6}, Lx;->ᄄ(F)V
+
+    goto :goto_1
+
+    :cond_1
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v6}, Lx;->ᄄ(F)V
+
+    :goto_1
+    invoke-virtual {v3, v4}, Landroidx/drawerlayout/widget/DrawerLayout;->ᄅ(I)Landroid/view/View;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_2
+
+    invoke-static {v3}, Landroidx/drawerlayout/widget/DrawerLayout;->ᄎ(Landroid/view/View;)Z
+
+    move-result v3
+
+    goto :goto_2
+
+    :cond_2
+    move v3, v2
+
+    :goto_2
+    if-eqz v3, :cond_3
+
+    iget v3, v5, Lx;->ᄅ:I
+
+    goto :goto_3
+
+    :cond_3
+    iget v3, v5, Lx;->ᄄ:I
+
+    :goto_3
+    iget-boolean v4, v5, Lx;->ᄆ:Z
+
+    iget-object v6, v5, Lx;->ᄀ:Lv;
+
+    if-nez v4, :cond_4
+
+    invoke-interface {v6}, Lv;->ᄂ()Z
+
+    move-result v4
+
+    if-nez v4, :cond_4
+
+    const-string v4, "ActionBarDrawerToggle"
+
+    const-string v7, "DrawerToggle may not show up because NavigationIcon is not visible. You may need to call actionbar.setDisplayHomeAsUpEnabled(true);"
+
+    invoke-static {v4, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    iput-boolean v1, v5, Lx;->ᄆ:Z
+
+    :cond_4
+    iget-object v4, v5, Lx;->ᄃ:Lvq;
+
+    invoke-interface {v6, v4, v3}, Lv;->ᄆ(Lvq;I)V
+
+    iget-object v3, p0, Lir/easylive/bale/MainActivity;->ᄈ:Lcom/google/android/material/navigation/NavigationView;
+
+    iget-object v3, v3, Lcom/google/android/material/navigation/NavigationView;->ᄉ:Lr90;
+
+    iget-object v3, v3, Lr90;->ᄂ:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v3
+
+    if-nez v3, :cond_5
+
+    goto/16 :goto_9
+
+    :cond_5
+    const v4, 0x7f09011d
+
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Landroid/widget/TextView;
+
+    const v5, 0x7f0901d4
+
+    invoke-virtual {v3, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/TextView;
+
+    const v6, 0x7f090036
+
+    invoke-virtual {v3, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    check-cast v3, Landroid/widget/ImageView;
+
+    iget-object v6, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {v6}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v7
+
+    :try_start_0
+    invoke-static {v7}, Lq80;->ᄂ(Landroid/database/sqlite/SQLiteDatabase;)V
+
+    const-string v8, "users"
+
+    const-string v10, "is_active = ?"
+
+    const-string v6, "1"
+
+    filled-new-array {v6}, [Ljava/lang/String;
+
+    move-result-object v11
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v12, 0x0
+
+    invoke-virtual/range {v7 .. v14}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v6
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz v6, :cond_7
+
+    :try_start_1
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    new-instance v7, Lir/easylive/bale/baleLibrary/models/BaleUser;
+
+    invoke-direct {v7}, Lir/easylive/bale/baleLibrary/models/BaleUser;-><init>()V
+
+    const-string v8, "user_id"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Lir/easylive/bale/baleLibrary/models/BaleUser;->setId(I)V
+
+    const-string v8, "access_hash"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getLong(I)J
+
+    move-result-wide v8
+
+    invoke-virtual {v7, v8, v9}, Lir/easylive/bale/baleLibrary/models/BaleUser;->setAccessHash(J)V
+
+    const-string v8, "name"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Lir/easylive/bale/baleLibrary/models/BaleUser;->setName(Ljava/lang/String;)V
+
+    const-string v8, "sex"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    invoke-virtual {v7, v8}, Lir/easylive/bale/baleLibrary/models/BaleUser;->setSex(I)V
+
+    const-string v8, "is_bot"
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v8
+
+    invoke-interface {v6, v8}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v8
+
+    if-ne v8, v1, :cond_6
+
+    move v8, v1
+
+    goto :goto_4
+
+    :cond_6
+    move v8, v2
+
+    :goto_4
+    invoke-virtual {v7, v8}, Lir/easylive/bale/baleLibrary/models/BaleUser;->setBot(Z)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_8
+
+    :catch_0
+    move-exception v6
+
+    goto :goto_6
+
+    :catchall_0
+    move-exception v7
+
+    :try_start_3
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_5
+
+    :catchall_1
+    move-exception v6
+
+    :try_start_4
+    invoke-virtual {v7, v6}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    :goto_5
+    throw v7
+
+    :cond_7
+    if-eqz v6, :cond_8
+
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
+    :try_end_4
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+
+    goto :goto_7
+
+    :goto_6
+    const-string v7, "q80"
+
+    const-string v8, "Error getting active user"
+
+    invoke-static {v7, v8, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_8
+    :goto_7
+    const/4 v7, 0x0
+
+    :goto_8
+    if-eqz v7, :cond_9
+
+    iget-object v6, v7, Lir/easylive/bale/baleLibrary/models/BaleUser;->name:Ljava/lang/String;
+
+    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object v6, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {v6}, Lq80;->ᄅ()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_9
+    new-instance v6, Lki;
+
+    const/4 v7, 0x6
+
+    invoke-direct {v6, p0, v7}, Lki;-><init>(Ljava/lang/Object;I)V
+
+    invoke-virtual {v3, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {v4, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :goto_9
+    iget-object v3, p0, Lir/easylive/bale/MainActivity;->ᄈ:Lcom/google/android/material/navigation/NavigationView;
+
+    new-instance v4, Ld50;
+
+    const/4 v5, 0x4
+
+    invoke-direct {v4, p0, v5}, Ld50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    invoke-virtual {v3, v4}, Lcom/google/android/material/navigation/NavigationView;->setNavigationItemSelectedListener(Lv90;)V
+
+    new-instance v3, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v4
+
+    invoke-direct {v3, v4}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v4, Lt0;
+
+    const/16 v5, 0x9
+
+    invoke-direct {v4, p0, v5}, Lt0;-><init>(Ljava/lang/Object;I)V
+
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    new-instance v3, Lse;
+
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lsw;
+
+    move-result-object v4
+
+    invoke-virtual {p0}, Landroidx/activity/ComponentActivity;->getLifecycle()Lp20;
+
+    move-result-object v5
+
+    new-instance v6, Lh50;
+
+    new-instance v7, Ld50;
+
+    invoke-direct {v7, p0, v2}, Ld50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    const v8, 0x7f110151
+
+    invoke-virtual {p0, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-direct {v6, v7, v8}, Lh50;-><init>(Ld50;Ljava/lang/String;)V
+
+    new-instance v7, Lh50;
+
+    new-instance v8, Ld50;
+
+    invoke-direct {v8, p0, v1}, Ld50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    const v9, 0x7f110153
+
+    invoke-virtual {p0, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v7, v8, v9}, Lh50;-><init>(Ld50;Ljava/lang/String;)V
+
+    new-instance v8, Lh50;
+
+    new-instance v9, Ld50;
+
+    invoke-direct {v9, p0, v0}, Ld50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    const v10, 0x7f110152
+
+    invoke-virtual {p0, v10}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v8, v9, v10}, Lh50;-><init>(Ld50;Ljava/lang/String;)V
+
+    filled-new-array {v6, v7, v8}, [Lh50;
+
+    move-result-object v6
+
+    invoke-static {v6}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v6
+
+    invoke-direct {v3, v4, v5, v6, v0}, Lse;-><init>(Lsw;Lp20;Ljava/util/List;I)V
+
+    iput-object v3, p0, Lir/easylive/bale/MainActivity;->ᄄ:Lse;
+
+    new-instance v0, Loe;
+
+    const/4 v4, 0x5
+
+    invoke-direct {v0, p0, v4}, Loe;-><init>(Ljava/lang/Object;I)V
+
+    iput-object v0, p0, Lir/easylive/bale/MainActivity;->ᄅ:Loe;
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v0, v0, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0, v3}, Landroidx/viewpager2/widget/ViewPager2;->setAdapter(Luf0;)V
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v0, v0, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    iget-object v3, p0, Lir/easylive/bale/MainActivity;->ᄅ:Loe;
+
+    invoke-virtual {v0, v3}, Landroidx/viewpager2/widget/ViewPager2;->ᄀ(Lfu0;)V
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v0, v0, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->setOffscreenPageLimit(I)V
+
+    new-instance v0, Lmo0;
+
+    iget-object v1, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v3, v1, Lir/easylive/bale/databinding/ActivityMainBinding;->tabLayout:Lcom/google/android/material/tabs/TabLayout;
+
+    iget-object v1, v1, Lir/easylive/bale/databinding/ActivityMainBinding;->viewPager:Landroidx/viewpager2/widget/ViewPager2;
+
+    new-instance v4, Ld50;
+
+    const/4 v5, 0x3
+
+    invoke-direct {v4, p0, v5}, Ld50;-><init>(Lir/easylive/bale/MainActivity;I)V
+
+    invoke-direct {v0, v3, v1, v4}, Lmo0;-><init>(Lcom/google/android/material/tabs/TabLayout;Landroidx/viewpager2/widget/ViewPager2;Ljo0;)V
+
+    invoke-virtual {v0}, Lmo0;->ᄀ()V
+
+    new-instance v0, Lrf;
+
+    iget-object v1, p0, Lir/easylive/bale/MainActivity;->ᄂ:Lir/easylive/bale/databinding/ActivityMainBinding;
+
+    iget-object v1, v1, Lir/easylive/bale/databinding/ActivityMainBinding;->bottomNavigationView:Lcom/google/android/material/bottomnavigation/BottomNavigationView;
+
+    invoke-direct {v0, p0, v1, v2}, Lrf;-><init>(Landroid/content/Context;Lcom/google/android/material/bottomnavigation/BottomNavigationView;I)V
+
+    return-void
+.end method
+
+.method public final ᄉ()V
+    .locals 10
+
+    const-string v0, "HZSbale"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    const-wide/16 v3, 0x0
+
+    const-string v5, "lastUpdateDialogShowed"
+
+    invoke-interface {v2, v5, v3, v4}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v2
+
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v6
+
+    sub-long v2, v6, v2
+
+    const-wide/32 v8, 0x36ee80
+
+    cmp-long v2, v2, v8
+
+    if-ltz v2, :cond_0
+
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    const-string v3, "canUpdateApp"
+
+    invoke-interface {v2, v3, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0, v5, v6, v7}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    new-instance v0, Ltr0;
+
+    invoke-direct {v0}, Ltr0;-><init>()V
+
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lsw;
+
+    move-result-object v2
+
+    iput-boolean v1, v0, Lyp;->k:Z
+
+    const/4 v3, 0x1
+
+    iput-boolean v3, v0, Lyp;->l:Z
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    new-instance v4, Lx6;
+
+    invoke-direct {v4, v2}, Lx6;-><init>(Lsw;)V
+
+    iput-boolean v3, v4, Lx6;->ᄏ:Z
+
+    const-string v2, "UpdateBottomSheetTag"
+
+    invoke-virtual {v4, v1, v0, v2, v3}, Lx6;->ᄅ(ILdw;Ljava/lang/String;I)V
+
+    invoke-virtual {v4, v1}, Lx6;->ᄄ(Z)I
+
+    invoke-virtual {p0}, Landroidx/fragment/app/FragmentActivity;->getSupportFragmentManager()Lsw;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Lsw;->ㄷ(Z)Z
+
+    invoke-virtual {v0}, Lsw;->ㄻ()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public final ᄊ(Landroid/view/SubMenu;Z)V
+    .locals 11
+
+    if-eqz p2, :cond_6
+
+    if-nez p1, :cond_0
+
+    goto/16 :goto_7
+
+    :cond_0
+    invoke-interface {p1}, Landroid/view/Menu;->clear()V
+
+    const-string p2, "\u0627\u0641\u0632\u0648\u062f\u0646 \u0627\u06a9\u0627\u0646\u062a \u062c\u062f\u06cc\u062f"
+
+    invoke-interface {p1, p2}, Landroid/view/Menu;->add(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+
+    move-result-object p2
+
+    const v0, 0x7f07009d
+
+    invoke-interface {p2, v0}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+
+    move-result-object p2
+
+    new-instance v0, Lg50;
+
+    invoke-direct {v0, p0}, Lg50;-><init>(Lir/easylive/bale/MainActivity;)V
+
+    invoke-interface {p2, v0}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+
+    iget-object p2, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {p2}, Lq80;->ᄅ()Ljava/lang/String;
+
+    move-result-object p2
+
+    iget-object v0, p0, Lir/easylive/bale/MainActivity;->ᄇ:Lq80;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v1, "phone_number"
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    :try_start_0
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteOpenHelper;->getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    :try_start_1
+    const-string v4, "users"
+
+    filled-new-array {v1}, [Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v10, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-object v3, v0
+
+    invoke-virtual/range {v3 .. v10}, Landroid/database/sqlite/SQLiteDatabase;->query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+
+    if-eqz v3, :cond_2
+
+    :try_start_2
+    invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    :cond_1
+    invoke-interface {v3, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v4
+
+    invoke-interface {v3, v4}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-interface {v3}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v4
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    if-nez v4, :cond_1
+
+    goto :goto_1
+
+    :catchall_0
+    move-exception v1
+
+    :try_start_3
+    invoke-interface {v3}, Landroid/database/Cursor;->close()V
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    goto :goto_0
+
+    :catchall_1
+    move-exception v3
+
+    :try_start_4
+    invoke-virtual {v1, v3}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    :goto_0
+    throw v1
+
+    :catchall_2
+    move-exception v1
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    if-eqz v3, :cond_3
+
+    invoke-interface {v3}, Landroid/database/Cursor;->close()V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+
+    :cond_3
+    :try_start_5
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_0
+
+    goto :goto_5
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_4
+
+    :goto_2
+    if-eqz v0, :cond_4
+
+    :try_start_6
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
+
+    goto :goto_3
+
+    :catchall_3
+    move-exception v0
+
+    :try_start_7
+    invoke-virtual {v1, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
+
+    :cond_4
+    :goto_3
+    throw v1
+    :try_end_7
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
+
+    :goto_4
+    const-string v1, "q80"
+
+    const-string v3, "Error getting phone numbers"
+
+    invoke-static {v1, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :goto_5
+    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_6
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-interface {p1, v1}, Landroid/view/Menu;->add(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+
+    move-result-object v2
+
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_5
+
+    const v3, 0x7f0700a0
+
+    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+
+    :cond_5
+    new-instance v3, Lqf;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, p0, v1, v4}, Lqf;-><init>(Ljava/lang/Object;Ljava/io/Serializable;I)V
+
+    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+
+    goto :goto_6
+
+    :cond_6
+    :goto_7
+    return-void
+.end method
